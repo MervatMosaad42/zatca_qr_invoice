@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "zatca_qr_invoice",
+    'name': "Zatca Qr E-Invoice",
 
     'summary': """Zatca QR For Invoice Community Edition""",
 
