@@ -7,7 +7,7 @@
     'description': """
     Invoices for the Kingdom of Saudi Arabia Community Edition
 """,
-    'depends': ['l10n_sa', 'l10n_gcc_invoice'],
+    'depends': ['l10n_sa', 'l10n_gcc_invoice_community'],
     'data': [
         'views/view_move_form.xml',
         'views/report_invoice.xml',

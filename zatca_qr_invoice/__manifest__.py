@@ -13,7 +13,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base', 'l10n_sa_invoice'],
+    'depends': ['base', 'l10n_sa_invoice_community'],
 
     'data': [
     ],

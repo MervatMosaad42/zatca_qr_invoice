@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="arabic_english_invoice" inherit_id="l10n_gcc_invoice.arabic_english_invoice">
+    <template id="arabic_english_invoice" inherit_id="l10n_gcc_invoice_community.arabic_english_invoice">
         <xpath expr="//div[@name='due_date']" position="after">
             <div class="row" t-if="o.l10n_sa_delivery_date" name="delivery_date">
                 <div class="col-2">
@@ -20,7 +20,7 @@
         </xpath>
     </template>
 
-    <template id="external_layout_standard" inherit_id="l10n_gcc_invoice.external_layout_standard">
+    <template id="external_layout_standard" inherit_id="l10n_gcc_invoice_community.external_layout_standard">
         <xpath expr="//div[@name='qr_code']" position="inside">
             <img t-if="o.l10n_sa_qr_code_str"
                  style="display:block;margin:10% auto 0 auto;"

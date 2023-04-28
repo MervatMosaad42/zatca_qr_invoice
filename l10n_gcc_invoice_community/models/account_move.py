@@ -12,7 +12,7 @@ class AccountMove(models.Model):
     def _get_name_invoice_report(self):
         self.ensure_one()
         if self.company_id.country_id.code == 'SA':
-            return 'l10n_gcc_invoice.arabic_english_invoice'
+            return 'l10n_gcc_invoice_community.arabic_english_invoice'
         return super()._get_name_invoice_report()
 
 
