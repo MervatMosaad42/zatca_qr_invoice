@@ -19,5 +19,5 @@
     ],
     'demo': [
     ],
-    'images': ['static/description/main_screenshot.png'],
+    'images': ['static/description/main_screen.png'],
 }
