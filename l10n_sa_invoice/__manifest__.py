@@ -1,13 +1,12 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'K.S.A - Invoice',
+    'name': 'K.S.A - Invoice Community Edition',
     'version': '1.0.0',
-    'author': 'Odoo S.A.',
+    'author': 'Mervat Mosaad',
     'category': 'Accounting/Localizations',
     'license': 'LGPL-3',
     'description': """
-    Invoices for the Kingdom of Saudi Arabia
+    Invoices for the Kingdom of Saudi Arabia Community Edition
 """,
     'depends': ['l10n_sa', 'l10n_gcc_invoice'],
     'data': [

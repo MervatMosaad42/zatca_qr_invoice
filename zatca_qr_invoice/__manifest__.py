@@ -2,31 +2,21 @@
 {
     'name': "zatca_qr_invoice",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Zatca QR For Invoice Community Edition""",
 
     'description': """
-        Long description of module's purpose
+       Zatca QR For Invoice Community Edition
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
+    'author': "Mervat Mosaad",
+    'website': "mervatmosaad96@gmail.com",
     'category': 'Uncategorized',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly
     'depends': ['base', 'l10n_sa_invoice'],
 
-    # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
     ],
-    # only loaded in demonstration mode
     'demo': [
 
     ],

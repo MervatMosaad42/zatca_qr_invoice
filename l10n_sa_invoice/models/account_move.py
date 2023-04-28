@@ -13,13 +13,14 @@ class AccountMove(models.Model):
     l10n_sa_show_delivery_date = fields.Boolean(compute='_compute_show_delivery_date')
     l10n_sa_qr_code_str = fields.Char(string='Zatka QR Code', compute='_compute_qr_code_str')
     l10n_sa_confirmation_datetime = fields.Datetime(string='Confirmation Date', readonly=True, copy=False)
+    vat = fields.Char(related="company_id.vat", string="Vat", required=1)
 
     @api.depends('country_code', 'move_type')
     def _compute_show_delivery_date(self):
         for move in self:
             move.l10n_sa_show_delivery_date = move.country_code == 'SA' and move.move_type in ('out_invoice', 'out_refund')
 
-    @api.depends('amount_total', 'amount_untaxed', 'l10n_sa_confirmation_datetime', 'company_id', 'company_id.vat')
+    @api.depends('amount_total', 'amount_untaxed', 'l10n_sa_confirmation_datetime', 'company_id', 'vat')
     def _compute_qr_code_str(self):
         """ Generate the qr code for Saudi e-invoicing. Specs are available at the following link at page 23
         https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20210528_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vShared.pdf
@@ -32,9 +33,9 @@ class AccountMove(models.Model):
 
         for record in self:
             qr_code_str = ''
-            if record.l10n_sa_confirmation_datetime and record.company_id.vat:
+            if record.l10n_sa_confirmation_datetime and record.vat:
                 seller_name_enc = get_qr_encoding(1, record.company_id.display_name)
-                company_vat_enc = get_qr_encoding(2, record.company_id.vat)
+                company_vat_enc = get_qr_encoding(2, record.vat)
                 time_sa = fields.Datetime.context_timestamp(self.with_context(tz='Asia/Riyadh'), record.l10n_sa_confirmation_datetime)
                 timestamp_enc = get_qr_encoding(3, time_sa.isoformat())
                 invoice_total_enc = get_qr_encoding(4, str(record.amount_total))

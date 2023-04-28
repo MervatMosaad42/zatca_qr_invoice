@@ -13,7 +13,6 @@ class InheritAccountMove(models.Model):
 
     @api.depends('amount_total', 'amount_untaxed', 'invoice_date', 'company_id', 'company_id.vat')
     def _compute_qr_code_str(self):
-        print('calling compute qr code method')
         """ Generate the qr code for Saudi e-invoicing. Specs are available at the following link at page 23
         https://zatca.gov.sa/ar/E-Invoicing/SystemsDevelopers/Documents/20210528_ZATCA_Electronic_Invoice_Security_Features_Implementation_Standards_vShared.pdf
         """
@@ -34,7 +33,6 @@ class InheritAccountMove(models.Model):
                     time_sa = fields.Datetime.context_timestamp(self.with_context(tz='Asia/Riyadh'),
                                                             record.l10n_sa_confirmation_datetime)
                 elif record.l10n_sa_delivery_date:
-                    print('l10n_sa_delivery_date')
                     time_sa = record.l10n_sa_delivery_date
                 timestamp_enc = get_qr_encoding(3, time_sa.isoformat())
                 invoice_total_enc = get_qr_encoding(4, str(record.amount_total))

@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_zatca_qr_invoice_zatca_qr_invoice,zatca_qr_invoice.zatca_qr_invoice,model_zatca_qr_invoice_zatca_qr_invoice,base.group_user,1,1,1,1
