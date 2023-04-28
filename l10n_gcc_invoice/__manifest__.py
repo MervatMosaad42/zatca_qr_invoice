@@ -8,7 +8,6 @@
     'description': """
     Arabic/English for GCC Community Edition
 """,
-    'license': 'LGPL-3',
     'depends': ['account'],
     'data': [
         'views/report_invoice.xml',

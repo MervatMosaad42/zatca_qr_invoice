@@ -4,7 +4,6 @@
     'version': '1.0.0',
     'author': 'Mervat Mosaad',
     'category': 'Accounting/Localizations',
-    'license': 'LGPL-3',
     'description': """
     Invoices for the Kingdom of Saudi Arabia Community Edition
 """,
